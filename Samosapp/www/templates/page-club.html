@@ -1,0 +1,64 @@
+<!--Club page including login and adding events-->
+
+<ion-view view-title="CLUB PAGE">
+    <ion-content ng-controller="clubController as club">
+
+        <!--Login page-->
+        <div ng-hide="login">
+
+            <!--Username/password forms-->
+            <div class="list">
+                <label class="item item-input">
+                    <span class="input-label">Username:</span>
+                    <input type="text" ng-model="user.name">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Password:</span>
+                    <input type="password" ng-model="user.password">
+                </label>
+            </div>
+
+            <!--Login button-->
+            <div>
+                <button id="loginButton" class="button button-block button-energized" ng-click="onLogin(user)">
+                    Sign In
+                </button>
+            </div>
+
+        </div>
+
+        <!--Club page-->
+        <div ng-show="login">
+            <br>
+
+            <!--Title and sign out button-->
+            <div class="bar-stable bar-subheader">
+                <span class="your-events-title">Your Events</span>
+                <span class="buttons">
+                    <button id="logoutButton" class="button button-small button-energized" ng-click="onLogout()">
+                        Sign Out
+                    </button>
+                </span>
+            </div>
+
+            <!--Add event button-->
+            <div class="card" ng-click="openModal()">
+                <div class="item item-text-wrap item-icon-left">
+                    <i class="icon ion-plus-round"></i>
+                    Add Event
+                </div>
+            </div>
+            
+            <!--List of the club's existing events-->
+            <div class="card" ng-repeat="(id, event) in clubEvents | orderByDate: 'date'" ng-click="openModal($index, event)">
+                <div class="item item-text-wrap">
+                    <strong>{{readableDate(event.date)}}</strong><br />
+                    {{event.product}} in {{event.location}}<br />
+                    {{event.time_start}}-{{event.time_end}}<br />
+                    "{{event.description}}"
+                </div>
+            </div>
+
+        </div>
+    </ion-content>
+</ion-view>

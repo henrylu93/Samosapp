@@ -1,0 +1,49 @@
+<!--List of upcoming events-->
+
+<ion-view view-title="UPCOMING EVENTS">
+
+    <ion-content ng-controller="upcomingController as upcoming">
+ 
+        <!--Add pull to refresh feature-->
+        <ion-refresher pulling-text="Pull to refresh..."
+                       on-refresh="onRefresh()">
+        </ion-refresher>
+
+        <ion-list>
+            <div ng-repeat="event in upcomingEvents | orderByDate: 'date'">
+
+                <!--All date dividers are hidden-->
+                <div class="item item-divider date-divider {{event.date}}">
+                    <!--{{upcoming.addDayOfWeek(event.date)}}-->
+                    {{upcoming.readableDate(event.date)}}
+                </div>
+                
+                <!--Show only the first date divider-->
+                <div ng-show="upcoming.showFirstClass(event.date)"></div>
+
+                <!--List item-->
+                <ion-item class="item item-icon-right"
+                          ng-click="upcoming.toggleEvent(event)"
+                          ng-class="{active: upcoming.isEventShown(event)}">
+                    <i class="icon dark" ng-class="upcoming.isEventShown(event) ? 'ion-chevron-up' : 'ion-chevron-down'"></i>
+                    &nbsp;
+                    <strong>{{event.product}}</strong> {{event.location}}
+                </ion-item>
+
+                <!--Expand to show details on click-->
+                <div ng-show="upcoming.isEventShown(event)">
+                    <ion-item class="item-accordion item-text-wrap upcoming-details">
+                        <ul type="disc">
+                            <!--Add bullet points-->
+                            <li>Hosted by: {{event.club_name}}</li>
+                            <li>Time: {{event.time_start}}</li>
+                            <li>"{{event.description}}"</li>
+                        </ul>
+                    </ion-item>
+                </div>
+
+            </div>
+        </ion-list>
+    </ion-content>
+</ion-view>
+

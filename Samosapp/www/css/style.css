@@ -1,0 +1,62 @@
+html, body {
+    font-family: 'Century Gothic';
+}
+
+h1 {
+    font-size: 30px;
+    /*background-color: red;*/
+}
+
+.slider {
+    height: 100%;
+    text-align: center;
+}
+
+.scroll {
+    height: 100%;
+} 
+
+.current-events-header {
+    text-align: left;
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.current-events-content {
+    text-align: left;
+    font-size: 14px;
+}
+
+.date-divider {
+    display: none;
+    text-align: left;
+    font-size: 14px;
+    margin: 0;
+    padding: 2px;
+}
+
+.upcoming-details {
+    font-size: 14px;
+    margin-left: 10px;
+    text-align: left;
+}
+
+.your-events-title {
+    font-size: 20px;
+    text-align: left;
+    margin-right: 100px;
+}
+
+#logoutButton {
+    text-align: right;
+    padding: 3px 20px;
+    margin-top: -5px;
+}
+
+.button-modal {
+    margin: 0 10px;
+}
+
+div.scroll.padding {
+      -webkit-transform: initial !important;
+}

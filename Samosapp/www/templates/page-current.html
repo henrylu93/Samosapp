@@ -1,0 +1,21 @@
+<!--List of current events-->
+
+<ion-view view-title="TODAY'S EVENTS" ng-controller="currentController">
+    <ion-content>
+
+        <!--Add pull to refresh feature-->
+        <ion-refresher pulling-text="Pull to refresh..."
+                       on-refresh="onRefresh()">
+        </ion-refresher>
+
+        <div class="card" ng-repeat="event in currentEvents">
+            <div class="item item-body">
+                <div class="current-events-header">{{event.product}}</div>
+                <div class="current-events-content">{{event.club_name}}</div>
+                <div class="current-events-content">{{event.location}}, {{event.time_start}}</div>
+                <div class="current-events-content">"{{event.description}}"</div>
+            </div>
+        </div>
+
+    </ion-content>
+</ion-view>

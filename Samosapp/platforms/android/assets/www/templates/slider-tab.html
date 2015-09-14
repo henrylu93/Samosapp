@@ -1,0 +1,30 @@
+<!--Main Navigation system: slidebox + tab-->
+
+<!--Ionic Slidebox--> 
+<ion-slide-box on-slide-changed="onSlideChange($index)" show-pager="false" active-slide ="setFirstSlide">
+    <ion-slide>
+        <div ng-include src="'templates/page-club.html'"></div>
+    </ion-slide>
+
+    <ion-slide>
+        <div ng-include src="'templates/page-current.html'"></div>
+    </ion-slide>
+
+    <ion-slide>
+        <div ng-include src="'templates/page-upcoming.html'"></div>
+    </ion-slide>
+</ion-slide-box>
+
+<!--Ionic Tabs-->
+<ion-tabs class="tabs-stable tabs-striped">
+
+    <ion-tab title="Club" href="#/index/club" ng-click="onTabClick(0)">
+    </ion-tab>
+
+    <ion-tab title="Current" href="#/index/current" ng-click="onTabClick(1)">
+    </ion-tab>
+
+    <ion-tab title="Upcoming" href="#/index/upcoming" ng-click="onTabClick(2)">
+    </ion-tab>
+
+</ion-tabs>

@@ -1,0 +1,60 @@
+﻿<!--Modal for adding a new event within the club page-->
+
+<ion-view >
+    <ion-modal-view >
+
+        <ion-header-bar>
+            <h1 class="title">Edit Event Details</h1>
+        </ion-header-bar>
+
+        <ion-content>
+            {{clubName}}
+            <ion-list>
+
+                <label class="item item-input">
+                    <span class="input-label">Product:</span>
+                    <input type="text" ng-model="club.details.product">
+                </label>
+
+                <label class="item item-input">
+                    <span class="input-label">Location:</span>
+                    <input type="text" ng-model="club.details.location">
+                </label>
+
+                <label class="item item-input">
+                    <span class="input-label">Date:</span>
+                    <input type="date" ng-model="club.details.date">
+                </label>
+
+                <label class="item item-input">
+                    <span class="input-label">Time:</span>
+                    <input type="time" ng-model="club.details.time">
+                </label>
+
+                <label class="item item-input">
+                    <span class="input-label">Description (Optional):</span>
+                    <input type="text" ng-model="club.details.description">
+                </label>
+            </ion-list>
+
+            <!--Cancel and Confirm buttons-->
+            <div class="button-bar">
+                <button class="button-modal button button-block button-energized" ng-click="closeModal()">
+                    Cancel
+                </button>
+                <button ng-hide="isExistingEvent" class="button-modal button button-block button-energized" ng-click="updateEvent('true', club.details)">
+                    Confirm
+                </button>
+                <button ng-show="isExistingEvent" class="button-modal button button-block button-energized" ng-click="updateEvent('false', club.details)">
+                    Update
+                </button>
+            </div>
+
+            <!--Delete event button-->
+            <button ng-show="isExistingEvent" class="button-modal button button-block button-energized" ng-click="removeEvent()">
+                Delete Event
+            </button>
+
+        </ion-content>
+    </ion-modal-view>   
+</ion-view>
