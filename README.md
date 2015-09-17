@@ -23,4 +23,4 @@ This project was developed using JavaScript, HTML, CSS, PHP, and SQL. A tool cal
 
 **Release**
 
-At the moment Samosapp is not intended to be released to the public, mainly because I don't have the marketing skills and resources to convince students to download and use the app. This project was mainly for my own interests and gave me an opportunity to gain experience with Angular JS as well as some backend coding. 
+At the moment Samosapp is not intended to be released to the public, mainly because I don't have the marketing skills and resources to convince students to download and use the app. This project was mostly for my own interests and gave me an opportunity to gain experience with Angular JS as well as some backend coding. 
